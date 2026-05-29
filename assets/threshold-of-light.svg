@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Threshold of Light</title>
+  <desc id="desc">A restrained abstract field of black, ivory, bronze, and deep gold.</desc>
+  <defs>
+    <radialGradient id="halo" cx="52%" cy="38%" r="48%">
+      <stop offset="0" stop-color="#e4c178" stop-opacity=".72"/>
+      <stop offset=".42" stop-color="#8f6429" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#070604" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#f2e3b8"/>
+      <stop offset=".46" stop-color="#b78338"/>
+      <stop offset="1" stop-color="#5f421d"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="16"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .16"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="900" height="1200" fill="#080604"/>
+  <rect width="900" height="1200" fill="url(#halo)"/>
+  <path d="M434 116c72 198 72 382 0 552-56 133-51 262 16 386" fill="none" stroke="url(#gold)" stroke-width="16" opacity=".84"/>
+  <path d="M490 154c-78 208-66 392 36 552 58 91 75 191 50 300" fill="none" stroke="#f4efe5" stroke-width="3" opacity=".55"/>
+  <circle cx="450" cy="570" r="168" fill="none" stroke="#d2a85a" stroke-width="2" opacity=".32"/>
+  <circle cx="450" cy="570" r="284" fill="none" stroke="#f4efe5" stroke-width="1" opacity=".13"/>
+  <path d="M126 946c168-40 313-44 435-12 70 18 139 17 207-2" fill="none" stroke="#a87936" stroke-width="6" opacity=".38"/>
+  <rect width="900" height="1200" filter="url(#grain)" opacity=".45"/>
+</svg>
