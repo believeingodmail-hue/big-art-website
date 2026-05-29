@@ -49,11 +49,11 @@
         <span>Art Collections</span>
       </a>
       <nav class="desktop-nav" aria-label="Desktop navigation">
-        <a href="#believeingod">Collection</a>
+        <a href="#believeingod">Collections</a>
         <a href="#artist">Artist</a>
         <a href="#heritage">Heritage</a>
         <a href="#artworks">Artworks</a>
-        <a href="#exhibition">Exhibition</a>
+        <a href="#exhibition">Exhibitions</a>
         <a href="#inquiry">Inquiry</a>
       </nav>
       <a class="header-cta" href="#inquiry">Collector Inquiry</a>
@@ -63,11 +63,11 @@
     </header>
 
     <nav class="mobile-nav" aria-label="Mobile navigation" data-mobile-nav hidden>
-      <a href="#believeingod">Collection</a>
+      <a href="#believeingod">Collections</a>
       <a href="#artist">Artist</a>
       <a href="#heritage">Heritage</a>
       <a href="#artworks">Artworks</a>
-      <a href="#exhibition">Exhibition</a>
+      <a href="#exhibition">Exhibitions</a>
       <a href="#inquiry">Inquiry</a>
     </nav>
 
@@ -106,24 +106,20 @@
       <section class="section-shell collection-page" id="believeingod" aria-labelledby="collection-title">
         <div class="section-heading reveal">
           <div>
-            <p class="section-kicker">Dedicated Collection Page</p>
-            <h2 id="collection-title">BelieveinGOD Collection</h2>
+            <p class="section-kicker" data-collection-subtitle>Dedicated Collection Page</p>
+            <h2 id="collection-title" data-collection-title>BelieveinGOD Collection</h2>
           </div>
-          <p class="section-note">A devotional body of work built as a sanctuary: quiet enough for prayer, refined enough for international collectors, and rooted enough to carry ancestral presence.</p>
+          <p class="section-note" data-collection-description>A devotional body of work built as a sanctuary and managed from reusable collection records.</p>
         </div>
         <div class="collection-grid">
           <article class="collection-statement reveal">
-            <p>The BelieveinGOD Collection is the heart of B.I.G Art Collections. It treats belief not as ornament, but as architecture: a way of ordering space, restraint, color, material, and memory.</p>
-            <p>Each work is composed like a threshold. Dark fields hold stillness. Gold becomes revelation. Earthen surfaces recall Edo bronze, palace walls, ancestral shrines, and the dignity of inherited names.</p>
+            <p data-collection-description>A devotional body of work built as a sanctuary: quiet enough for prayer, refined enough for international collectors, and rooted enough to carry ancestral presence.</p>
+            <p class="content-admin-note"><strong>Content system:</strong> Add future collections, exhibitions, categories, and artworks in <code>src/content.ts</code> / <code>src/content.js</code>. The page renders cards, filters, details, and inquiry context automatically.</p>
             <a class="text-link" href="#artworks">View interactive artwork details <span>↗</span></a>
           </article>
-          <div class="principles reveal delay-one" aria-label="Collection principles">
-            <div class="principle"><span></span><strong>Faith</strong><small>Prayer as visual structure</small></div>
-            <div class="principle"><span></span><strong>Memory</strong><small>Edo histories held in texture</small></div>
-            <div class="principle"><span></span><strong>Light</strong><small>Gold as sacred illumination</small></div>
-            <div class="principle"><span></span><strong>Silence</strong><small>Negative space as reverence</small></div>
-          </div>
+          <div class="principles reveal delay-one" aria-label="Collection principles" data-collection-principles></div>
         </div>
+        <div class="management-grid reveal" data-collection-list aria-label="Managed collections"></div>
       </section>
 
       <section class="section-shell artist-page" id="artist" aria-labelledby="artist-title">
@@ -133,15 +129,12 @@
           <strong>IP</strong>
         </div>
         <div class="artist-copy reveal delay-one">
-          <p class="section-kicker">Artist Biography</p>
-          <h2 id="artist-title">Izoduwa Precious</h2>
-          <p>Izoduwa Precious is the visionary artist behind B.I.G Art Collections and the BelieveinGOD Collection. The practice moves between devotion, African contemporary abstraction, spiritual portraiture, and the material intelligence of earth, cloth, ash, metal, and light.</p>
-          <p>Precious approaches art as testimony: a disciplined act of remembering God, honoring ancestry, and creating objects that can live with emotional permanence in homes, galleries, museums, and contemplative interiors.</p>
-          <div class="artist-metrics" aria-label="Artist focus areas">
-            <span>Spiritual abstraction</span>
-            <span>Edo ancestral memory</span>
-            <span>Luxury sacred minimalism</span>
+          <p class="section-kicker" data-artist-role>Artist Biography</p>
+          <h2 id="artist-title" data-artist-name>Izoduwa Precious</h2>
+          <div data-artist-bio>
+            <p>Izoduwa Precious is the visionary artist behind B.I.G Art Collections and the BelieveinGOD Collection.</p>
           </div>
+          <div class="artist-metrics" aria-label="Artist focus areas" data-artist-metrics></div>
         </div>
       </section>
 
@@ -174,48 +167,40 @@
       <section class="section-shell gallery" id="artworks" aria-labelledby="artworks-title">
         <div class="section-heading reveal">
           <div>
-            <p class="section-kicker">Interactive Artwork Detail Pages</p>
-            <h2 id="artworks-title">Select works from the BelieveinGOD Collection.</h2>
+            <p class="section-kicker">Artwork Database / Detail Pages</p>
+            <h2 id="artworks-title">Search and filter works across collections.</h2>
           </div>
           <a class="text-link" href="#inquiry">Request availability <span>↗</span></a>
         </div>
+        <div class="artwork-tools reveal" aria-label="Artwork search and filters">
+          <label class="search-field">Search artworks, medium, year, status, exhibitions
+            <input type="search" data-artwork-search placeholder="Search by title, medium, category, collection…" autocomplete="off" />
+          </label>
+          <div class="category-filters" data-artwork-categories aria-label="Artwork categories"></div>
+          <p class="result-count" data-result-count aria-live="polite"></p>
+        </div>
         <div class="gallery-experience reveal" data-gallery-experience>
           <div class="featured-artwork" aria-live="polite">
-            <p class="gallery-number" data-artwork-number>01 / 04</p>
+            <p class="gallery-number" data-artwork-number>01 / 05</p>
             <div class="featured-preview ochre" data-featured-preview><span></span></div>
             <div>
+              <p class="section-kicker">Featured Artwork</p>
               <h3 data-artwork-title>Covenant in Gold</h3>
-              <p data-artwork-description>Acrylic, mineral pigment, and gold leaf. A radiant meditation on protection, promise, and divine presence.</p>
+              <p data-artwork-description>A radiant meditation on protection, promise, and divine presence.</p>
+              <p class="featured-meta" data-artwork-featured-meta>Acrylic, mineral pigment, gold leaf / 2026 / Available</p>
               <button class="detail-link" type="button" data-open-active-artwork>Open artwork detail page</button>
             </div>
           </div>
-          <div class="art-grid" role="list">
-            <button class="art-card reveal is-active" type="button" role="listitem" data-artwork-card data-title="Covenant in Gold" data-medium="Acrylic, mineral pigment, gold leaf" data-year="2026" data-scale="120 × 160 cm" data-description="A radiant meditation on protection, promise, and divine presence." data-detail="A ceremonial field of ochre and gold that frames belief as shelter. The work is designed for collectors seeking warmth, reverence, and a luminous spiritual anchor." data-preview="ochre" data-number="01 / 04">
-              <span class="art-preview ochre"><span></span></span>
-              <span class="art-meta"><strong>Covenant in Gold</strong><small>Gold leaf / 2026</small></span>
-            </button>
-            <button class="art-card reveal delay-card-one" type="button" role="listitem" data-artwork-card data-title="Anointed Silence" data-medium="Mixed media on canvas" data-year="2026" data-scale="100 × 140 cm" data-description="A quiet onyx field where restraint, breath, and sacred listening become form." data-detail="A work of deep quiet: blackened surfaces, tender metallic edges, and a vertical silence that asks the viewer to slow down before presence." data-preview="onyx" data-number="02 / 04">
-              <span class="art-preview onyx"><span></span></span>
-              <span class="art-meta"><strong>Anointed Silence</strong><small>Mixed media / 2026</small></span>
-            </button>
-            <button class="art-card reveal delay-card-two" type="button" role="listitem" data-artwork-card data-title="Psalm of the Ancestors" data-medium="Textile, charcoal, oil" data-year="2025" data-scale="140 × 180 cm" data-description="Earthen rhythm, inherited prayer, and memory composed as contemporary ritual." data-detail="Textile and charcoal become a remembered song. The surface evokes Edo earth, oral history, and the dignity of those whose names continue to guide the present." data-preview="ember" data-number="03 / 04">
-              <span class="art-preview ember"><span></span></span>
-              <span class="art-meta"><strong>Psalm of the Ancestors</strong><small>Textile + oil / 2025</small></span>
-            </button>
-            <button class="art-card reveal delay-card-three" type="button" role="listitem" data-artwork-card data-title="BelieveinGOD: First Light" data-medium="Oil, ash, metallic wash" data-year="2025" data-scale="90 × 130 cm" data-description="A threshold work about surrendering darkness into the first visible light." data-detail="First Light holds a narrow opening in a field of ash and pearl. It is the collection's visual prayer for renewal, courage, and divine arrival." data-preview="ivory" data-number="04 / 04">
-              <span class="art-preview ivory"><span></span></span>
-              <span class="art-meta"><strong>BelieveinGOD: First Light</strong><small>Oil + ash / 2025</small></span>
-            </button>
-          </div>
+          <div class="art-grid" role="list" data-artwork-grid></div>
         </div>
       </section>
 
       <section class="section-shell exhibition" id="exhibition" aria-labelledby="exhibition-title">
         <div class="virtual-gallery reveal">
           <div>
-            <p class="section-kicker">Virtual Exhibition Experience</p>
+            <p class="section-kicker">Exhibition Management System</p>
             <h2 id="exhibition-title">Move through a cinematic sanctuary for collectors and curators.</h2>
-            <p>The virtual exhibition is staged as three contemplative rooms: Invocation, Memory, and Revelation. Each room pairs artwork, light, and narrative to create an online viewing experience with museum poise.</p>
+            <p>The virtual exhibition is staged as reusable exhibition records. Each record links artworks to rooms, dates, venues, status, and curator-facing descriptions.</p>
             <div class="room-controls" role="tablist" aria-label="Virtual exhibition rooms">
               <button type="button" class="room-tab is-active" role="tab" aria-selected="true" data-room-tab="Invocation">Invocation</button>
               <button type="button" class="room-tab" role="tab" aria-selected="false" data-room-tab="Memory">Memory</button>
@@ -225,6 +210,7 @@
           </div>
           <div class="gallery-room invocation" data-gallery-room aria-label="Virtual room visualization"><span></span><span></span><span></span></div>
         </div>
+        <div class="management-grid reveal" data-exhibition-list aria-label="Managed exhibitions"></div>
       </section>
 
       <section class="section-shell timeline" id="timeline" aria-labelledby="timeline-title">
@@ -234,12 +220,7 @@
             <h2 id="timeline-title">Exhibitions, collections, and future releases.</h2>
           </div>
         </div>
-        <ol class="timeline-list reveal">
-          <li><time>2025</time><strong>First Light Studies</strong><span>Initial sacred abstraction studies establish the collection's tonal language of ash, pearl, shadow, and gold.</span></li>
-          <li><time>2026</time><strong>BelieveinGOD Collection</strong><span>B.I.G Art Collections launches the signature collection as an international digital gallery experience.</span></li>
-          <li><time>2026</time><strong>Private Viewing Room</strong><span>Collector inquiries, curatorial previews, and intimate acquisition conversations open globally.</span></li>
-          <li><time>Future</time><strong>Institutional Exhibition</strong><span>A scalable museum presentation with large-format works, sound, writing, and ancestral memory installations.</span></li>
-        </ol>
+        <ol class="timeline-list reveal" data-timeline-list></ol>
       </section>
 
       <section class="section-shell statement" id="statement" aria-labelledby="statement-title">
@@ -258,7 +239,7 @@
             <h2 id="inquiry-title">Begin a private conversation about acquisition, exhibition, or collaboration.</h2>
             <p>Use the inquiry form for availability, commissions, curatorial conversations, press, and private viewing requests.</p>
           </div>
-          <form class="collector-form" data-form="collector">
+          <form class="collector-form" data-form="collector" name="collector-inquiry">
             <label>Name <input required name="name" autocomplete="name" placeholder="Your name" /></label>
             <label>Email <input required type="email" name="email" autocomplete="email" placeholder="you@example.com" /></label>
             <label>Interest
@@ -268,8 +249,11 @@
                 <option>Private viewing</option>
                 <option>Commission</option>
                 <option>Curatorial / press</option>
+                <option>Exhibition proposal</option>
+                <option>Artist profile update</option>
               </select>
             </label>
+            <label>Artwork / Collection <input name="artwork" placeholder="Artwork title, collection, or exhibition" /></label>
             <label>Message <textarea name="message" rows="4" placeholder="Tell us about the work, room, or collaboration you have in mind."></textarea></label>
             <button class="primary-button" type="submit">Send Inquiry <span>✦</span></button>
             <p class="form-status" role="status" data-form-status></p>
@@ -280,7 +264,7 @@
             <p class="section-kicker">Newsletter</p>
             <h3>Receive collection releases, exhibition notes, and collector previews.</h3>
           </div>
-          <form class="newsletter-form" data-form="newsletter">
+          <form class="newsletter-form" data-form="newsletter" name="newsletter-signup">
             <label class="visually-hidden" for="newsletter-email">Email address</label>
             <input id="newsletter-email" required type="email" placeholder="Email address" autocomplete="email" />
             <button type="submit">Subscribe</button>
@@ -313,8 +297,12 @@
           <div><dt>Medium</dt><dd data-dialog-medium>Acrylic, mineral pigment, gold leaf</dd></div>
           <div><dt>Year</dt><dd data-dialog-year>2026</dd></div>
           <div><dt>Scale</dt><dd data-dialog-scale>120 × 160 cm</dd></div>
+          <div><dt>Category</dt><dd data-dialog-category>Gold Leaf</dd></div>
+          <div><dt>Collection</dt><dd data-dialog-collection>BelieveinGOD Collection</dd></div>
+          <div><dt>Status</dt><dd data-dialog-status>Available · Price and availability on request</dd></div>
         </dl>
         <p data-dialog-detail>A ceremonial field of ochre and gold that frames belief as shelter.</p>
+        <p class="provenance" data-dialog-provenance>B.I.G Art Collections studio archive, 2026.</p>
         <a class="primary-button" href="#inquiry" data-dialog-inquire>Inquire About This Work <span>↗</span></a>
       </div>
     </dialog>
