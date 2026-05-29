@@ -339,16 +339,61 @@ function setupRoomTabs() {
   });
 }
 
+function validateEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+}
+
+function setFieldError(form, fieldName, message) {
+  const field = form.elements.namedItem(fieldName);
+  const error = form.querySelector(`[data-field-error="${fieldName}"]`);
+
+  if (field) {
+    field.classList.toggle('is-invalid', Boolean(message));
+    field.setAttribute('aria-invalid', String(Boolean(message)));
+  }
+
+  if (error) error.textContent = message;
+}
+
+function validateForm(form) {
+  const formType = form.dataset.form;
+  const formData = new FormData(form);
+  const errors = {};
+  const email = String(formData.get('email') ?? '').trim();
+
+  if (!email) errors.email = 'Please enter an email address.';
+  else if (!validateEmail(email)) errors.email = 'Please enter a valid email address.';
+
+  if (formType === 'collector') {
+    const name = String(formData.get('name') ?? '').trim();
+    const interest = String(formData.get('interest') ?? '').trim();
+    const message = String(formData.get('message') ?? '').trim();
+
+    if (name.length < 2) errors.name = 'Please enter your name.';
+    if (!interest) errors.interest = 'Please choose an inquiry type.';
+    if (message.length < 20) errors.message = 'Please share at least 20 characters so the gallery can respond well.';
+  }
+
+  ['name', 'email', 'interest', 'message'].forEach((fieldName) => setFieldError(form, fieldName, errors[fieldName] ?? ''));
+  return errors;
+}
+
 function setupForms() {
   const forms = document.querySelectorAll('[data-form]');
   forms.forEach((form) => {
+    form.addEventListener('input', () => validateForm(form));
+    form.addEventListener('change', () => validateForm(form));
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const status = form.querySelector('[data-form-status]');
       const formType = form.dataset.form;
+      const errors = validateForm(form);
+      const firstInvalidName = Object.keys(errors)[0];
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
+      if (firstInvalidName) {
+        const firstInvalidField = form.elements.namedItem(firstInvalidName);
+        if (status) status.textContent = 'Please correct the highlighted fields before sending.';
+        firstInvalidField?.focus();
         return;
       }
 
@@ -356,12 +401,28 @@ function setupForms() {
         status.textContent =
           formType === 'newsletter'
             ? 'Thank you. You are on the private release list.'
-            : 'Thank you. Your inquiry has been prepared for the studio.';
+            : 'Thank you. Your inquiry has been prepared for the gallery.';
       }
 
       form.reset();
+      ['name', 'email', 'interest', 'message'].forEach((fieldName) => setFieldError(form, fieldName, ''));
     });
   });
+}
+
+function setupAnalyticsPlaceholder() {
+  const configuredId = window.BIG_GA_MEASUREMENT_ID || document.querySelector('meta[name="google-analytics-id"]')?.content;
+  if (!configuredId || configuredId === 'G-XXXXXXXXXX') return;
+
+  const analyticsScript = document.createElement('script');
+  analyticsScript.async = true;
+  analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(configuredId)}`;
+  document.head.append(analyticsScript);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = (...args) => window.dataLayer?.push(args);
+  window.gtag('js', new Date());
+  window.gtag('config', configuredId, { anonymize_ip: true });
 }
 
 function setupEvents() {
@@ -392,6 +453,7 @@ function init() {
   renderTimeline();
   setupRoomTabs();
   setupForms();
+  setupAnalyticsPlaceholder();
   setupEvents();
   observeReveals();
 

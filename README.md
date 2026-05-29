@@ -12,7 +12,10 @@ A professional static TypeScript website foundation for **B.I.G Art Collections*
 - Collector inquiry and newsletter signup forms
 - Responsive navigation and mobile-first layout refinements
 - Smooth CSS animations and lightweight SVG brand assets
-- SEO metadata, Open Graph tags, canonical URL, and schema setup
+- SEO metadata, Open Graph tags, canonical URL, sitemap, robots.txt, and structured data setup
+- GitHub Pages deployment workflow, 404 page, manifest, favicon, and launch audit checks
+- Contact form validation with accessible field-level errors
+- Performance and accessibility hardening for public launch
 - Fast dependency-free static build structure
 
 ## Content management
@@ -33,4 +36,9 @@ The front-end automatically renders collection cards, exhibition cards, search r
 npm run dev
 npm run typecheck
 npm run build
+npm run audit:launch
 ```
+
+## Launch operations
+
+See `LAUNCH_CHECKLIST.md` for GitHub Pages publishing steps, analytics activation, SEO indexing, image optimization guidance, and ongoing performance/accessibility maintenance.
