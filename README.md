@@ -1,8 +1,8 @@
-# B.I.G Art Collections / BelieveinGOD Collection
+# IZODUWA / BelieveinGOD Collection
 
-A premium, mature, minimalist static website for **B.I.G Art Collections** and the **BelieveinGOD Collection** by **Izoduwa Precious**.
+A premium black-and-gold static website for **IZODUWA Art Studio** and the **BelieveinGOD Collection**.
 
-The site is intentionally simple and Netlify-ready. It does not require React, Vite, npm, build tools, or GitHub Pages.
+The site is intentionally simple and Netlify-ready. It does not require React, TypeScript, Vite, npm, build tools, or GitHub Pages.
 
 ## Files
 
@@ -26,7 +26,6 @@ LAUNCH_CHECKLIST.md
 ## Editing
 
 - Update page copy in `index.html`.
+- Update artwork detail data in `script.js`.
 - Update visual styling in `style.css`.
-- Update navigation and reveal behavior in `script.js`.
-- Add official artwork photography inside `assets/` only when final artwork documentation is approved.
-- Replace or add artwork images inside `assets/`.
+- Place official artwork files inside `assets/` using the filenames referenced by `index.html`.
