@@ -1,4 +1,4 @@
-# Launch Checklist — B.I.G Art Collections / BelieveinGOD Collection
+# Launch Checklist — IZODUWA / BelieveinGOD Collection
 
 This website is a static, Netlify-ready digital gallery for `izoduwa.gallery`. It does not require React, Vite, npm, a build command, or GitHub Pages.
 
@@ -13,8 +13,8 @@ This website is a static, Netlify-ready digital gallery for `izoduwa.gallery`. I
 
 - Confirm `index.html`, `style.css`, `script.js`, `404.html`, and `assets/` are present.
 - Confirm `assets/favicon.svg` and `assets/og-image.svg` load correctly.
-- Confirm the contact link uses `studio@izoduwa.gallery`.
-- Confirm the viewing room uses text-only work presentation until official artwork documentation is ready.
+- Confirm the contact link uses `connect@izoduwa.gallery`.
+- Confirm the viewing room uses clickable artwork details and the official gallery symbol load correctly.
 - Test the site on mobile, tablet, and desktop widths.
 
 ## Content updates
