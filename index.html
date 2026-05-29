@@ -8,32 +8,104 @@
     <meta name="keywords" content="B.I.G Art Collections, BelieveinGOD Collection, Izoduwa Precious artist, Edo heritage art, African contemporary art, spiritual art, Nigerian artist, museum quality gallery, collector inquiry, virtual exhibition" />
     <meta name="author" content="B.I.G Art Collections" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="google-analytics-id" content="G-XXXXXXXXXX" />
     <meta property="og:title" content="B.I.G Art Collections | BelieveinGOD Collection" />
     <meta property="og:description" content="A sacred, cinematic, museum-quality digital experience for the BelieveinGOD Collection by Izoduwa Precious." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og-image.svg" />
+    <meta property="og:url" content="https://bigartcollections.com/" />
+    <meta property="og:image" content="https://bigartcollections.com/og-image.svg" />
+    <meta property="og:image:secure_url" content="https://bigartcollections.com/og-image.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="B.I.G Art Collections BelieveinGOD Collection preview in gold and shadow." />
     <meta property="og:site_name" content="B.I.G Art Collections" />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="B.I.G Art Collections" />
+    <meta name="twitter:title" content="B.I.G Art Collections | BelieveinGOD Collection" />
     <meta name="twitter:description" content="Spiritual African contemporary art staged as a cinematic museum experience." />
+    <meta name="twitter:image" content="https://bigartcollections.com/og-image.svg" />
+    <meta name="twitter:image:alt" content="B.I.G Art Collections BelieveinGOD Collection preview in gold and shadow." />
     <meta name="theme-color" content="#070503" />
     <link rel="canonical" href="https://bigartcollections.com/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="mask-icon" href="/mask-icon.svg" color="#d9a441" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="/src/styles.css" as="style" />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/src/styles.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ArtGallery",
-        "name": "B.I.G Art Collections",
-        "description": "Museum-quality spiritual African contemporary art centered on the BelieveinGOD Collection by Izoduwa Precious.",
-        "url": "https://bigartcollections.com/",
-        "founder": { "@type": "Person", "name": "Izoduwa Precious" },
-        "artworkSurface": "Canvas, textile, pigment, gold leaf, oil, charcoal",
-        "knowsAbout": ["African contemporary art", "Edo heritage", "spiritual art", "ancestral memory", "collector exhibitions"]
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://bigartcollections.com/#organization",
+            "name": "B.I.G Art Collections",
+            "url": "https://bigartcollections.com/",
+            "logo": "https://bigartcollections.com/favicon.svg",
+            "sameAs": ["https://www.instagram.com/"],
+            "contactPoint": [{ "@type": "ContactPoint", "contactType": "collector inquiries", "email": "studio@bigartcollections.com", "availableLanguage": ["en"] }]
+          },
+          {
+            "@type": "ArtGallery",
+            "@id": "https://bigartcollections.com/#gallery",
+            "name": "B.I.G Art Collections",
+            "description": "Museum-quality spiritual African contemporary art centered on the BelieveinGOD Collection by Izoduwa Precious.",
+            "url": "https://bigartcollections.com/",
+            "founder": { "@id": "https://bigartcollections.com/#artist-izoduwa-precious" },
+            "parentOrganization": { "@id": "https://bigartcollections.com/#organization" },
+            "knowsAbout": ["African contemporary art", "Edo heritage", "spiritual art", "ancestral memory", "collector exhibitions"]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://bigartcollections.com/#artist-izoduwa-precious",
+            "name": "Izoduwa Precious",
+            "jobTitle": "Founder Artist / B.I.G Art Collections",
+            "worksFor": { "@id": "https://bigartcollections.com/#organization" },
+            "homeLocation": "Nigeria / Global collector viewing room",
+            "knowsAbout": ["Spiritual abstraction", "Edo ancestral memory", "Luxury sacred minimalism"]
+          },
+          {
+            "@type": "CreativeWorkSeries",
+            "@id": "https://bigartcollections.com/#collection-believeingod",
+            "name": "BelieveinGOD Collection",
+            "creator": { "@id": "https://bigartcollections.com/#artist-izoduwa-precious" },
+            "publisher": { "@id": "https://bigartcollections.com/#organization" },
+            "about": ["faith", "ancestry", "light", "Edo heritage"],
+            "datePublished": "2026"
+          },
+          {
+            "@type": "VisualArtwork",
+            "@id": "https://bigartcollections.com/#artwork-covenant-in-gold",
+            "name": "Covenant in Gold",
+            "creator": { "@id": "https://bigartcollections.com/#artist-izoduwa-precious" },
+            "artMedium": "Acrylic, mineral pigment, gold leaf",
+            "artworkSurface": "Canvas",
+            "dateCreated": "2026",
+            "isPartOf": { "@id": "https://bigartcollections.com/#collection-believeingod" }
+          },
+          {
+            "@type": "ExhibitionEvent",
+            "@id": "https://bigartcollections.com/#exhibition-sanctuary-online-2026",
+            "name": "BelieveinGOD: Sanctuary Online",
+            "startDate": "2026",
+            "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": { "@type": "VirtualLocation", "url": "https://bigartcollections.com/#exhibition" },
+            "organizer": { "@id": "https://bigartcollections.com/#organization" },
+            "workFeatured": { "@id": "https://bigartcollections.com/#artwork-covenant-in-gold" }
+          }
+        ]
       }
+    </script>
+    <script>
+      window.BIG_GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
     </script>
   </head>
   <body class="is-loading">
@@ -239,24 +311,32 @@
             <h2 id="inquiry-title">Begin a private conversation about acquisition, exhibition, or collaboration.</h2>
             <p>Use the inquiry form for availability, commissions, curatorial conversations, press, and private viewing requests.</p>
           </div>
-          <form class="collector-form" data-form="collector" name="collector-inquiry">
-            <label>Name <input required name="name" autocomplete="name" placeholder="Your name" /></label>
-            <label>Email <input required type="email" name="email" autocomplete="email" placeholder="you@example.com" /></label>
-            <label>Interest
-              <select name="interest" required>
-                <option value="">Select an inquiry type</option>
-                <option>Acquisition</option>
-                <option>Private viewing</option>
-                <option>Commission</option>
-                <option>Curatorial / press</option>
-                <option>Exhibition proposal</option>
-                <option>Artist profile update</option>
-              </select>
-            </label>
-            <label>Artwork / Collection <input name="artwork" placeholder="Artwork title, collection, or exhibition" /></label>
-            <label>Message <textarea name="message" rows="4" placeholder="Tell us about the work, room, or collaboration you have in mind."></textarea></label>
+          <form class="collector-form" data-form="collector" name="collector-inquiry" novalidate>
+            <label for="collector-name">Name</label>
+            <input id="collector-name" required name="name" autocomplete="name" placeholder="Your name" minlength="2" maxlength="80" aria-describedby="collector-name-error" />
+            <p class="field-error" id="collector-name-error" data-field-error="name"></p>
+            <label for="collector-email">Email</label>
+            <input id="collector-email" required type="email" name="email" autocomplete="email" placeholder="you@example.com" maxlength="120" aria-describedby="collector-email-error" />
+            <p class="field-error" id="collector-email-error" data-field-error="email"></p>
+            <label for="collector-interest">Interest</label>
+            <select id="collector-interest" name="interest" required aria-describedby="collector-interest-error">
+              <option value="">Select an inquiry type</option>
+              <option>Acquisition</option>
+              <option>Private viewing</option>
+              <option>Commission</option>
+              <option>Curatorial / press</option>
+              <option>Exhibition proposal</option>
+              <option>Artist profile update</option>
+            </select>
+            <p class="field-error" id="collector-interest-error" data-field-error="interest"></p>
+            <label for="collector-artwork">Artwork / Collection</label>
+            <input id="collector-artwork" name="artwork" placeholder="Artwork title, collection, or exhibition" maxlength="120" autocomplete="off" />
+            <label for="collector-message">Message</label>
+            <textarea id="collector-message" required name="message" rows="4" minlength="20" maxlength="1200" placeholder="Tell us about the work, room, or collaboration you have in mind." aria-describedby="collector-message-error collector-message-hint"></textarea>
+            <small id="collector-message-hint" class="field-hint">Minimum 20 characters. Do not include sensitive payment details.</small>
+            <p class="field-error" id="collector-message-error" data-field-error="message"></p>
             <button class="primary-button" type="submit">Send Inquiry <span>✦</span></button>
-            <p class="form-status" role="status" data-form-status></p>
+            <p class="form-status" role="status" aria-live="polite" data-form-status></p>
           </form>
         </div>
         <div class="newsletter reveal delay-one">
@@ -264,11 +344,12 @@
             <p class="section-kicker">Newsletter</p>
             <h3>Receive collection releases, exhibition notes, and collector previews.</h3>
           </div>
-          <form class="newsletter-form" data-form="newsletter" name="newsletter-signup">
+          <form class="newsletter-form" data-form="newsletter" name="newsletter-signup" novalidate>
             <label class="visually-hidden" for="newsletter-email">Email address</label>
-            <input id="newsletter-email" required type="email" placeholder="Email address" autocomplete="email" />
+            <input id="newsletter-email" name="email" required type="email" placeholder="Email address" autocomplete="email" maxlength="120" aria-describedby="newsletter-email-error" />
             <button type="submit">Subscribe</button>
-            <p class="form-status" role="status" data-form-status></p>
+            <p class="field-error" id="newsletter-email-error" data-field-error="email"></p>
+            <p class="form-status" role="status" aria-live="polite" data-form-status></p>
           </form>
         </div>
       </section>
