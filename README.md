@@ -5,11 +5,27 @@ A professional static TypeScript website foundation for **B.I.G Art Collections*
 ## Features
 
 - Luxury dark editorial homepage
-- About the artist, collection, gallery, exhibition, and contact sections
+- Data-managed artwork, collection, exhibition, artist, gallery, and contact sections
+- Artwork detail pages through a reusable collector dialog
+- Searchable and category-filtered artwork archive
+- Featured artwork presentation driven by content records
+- Collector inquiry and newsletter signup forms
 - Responsive navigation and mobile-first layout refinements
 - Smooth CSS animations and lightweight SVG brand assets
 - SEO metadata, Open Graph tags, canonical URL, and schema setup
 - Fast dependency-free static build structure
+
+## Content management
+
+Primary content lives in `src/content.ts` for typed editing and `src/content.js` for the browser runtime. To add new inventory without redesigning the site:
+
+1. Add an artwork object to `artworks` with a unique `id`, `collectionId`, `category`, `medium`, `year`, `scale`, `status`, `preview`, descriptions, and keywords.
+2. Add or update a collection record in `collections` when a new body of work launches.
+3. Add or update an exhibition record in `exhibitions`, linking artworks with `artworkIds`.
+4. Add new category names to `artworkCategories` so the filter bar exposes them.
+5. Update `artistProfiles` when the artist biography, location, or focus areas change.
+
+The front-end automatically renders collection cards, exhibition cards, search results, category pills, featured artwork, timeline entries, and artwork detail content from those records.
 
 ## Commands
 
