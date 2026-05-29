@@ -1,5 +1,13 @@
 import { artistProfiles, artworkCategories, artworks, collections, exhibitions, type Artwork, type Collection, type Exhibition } from './content';
 
+declare global {
+  interface Window {
+    BIG_GA_MEASUREMENT_ID?: string;
+    dataLayer?: unknown[][];
+    gtag?: (...args: unknown[]) => number | undefined;
+  }
+}
+
 const menuButton = document.querySelector<HTMLButtonElement>('[data-menu-button]');
 const mobileNav = document.querySelector<HTMLElement>('[data-mobile-nav]');
 const menuIcon = document.querySelector<HTMLElement>('[data-menu-icon]');
@@ -339,16 +347,61 @@ function setupRoomTabs() {
   });
 }
 
+function validateEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+}
+
+function setFieldError(form: HTMLFormElement, fieldName: string, message: string) {
+  const field = form.elements.namedItem(fieldName) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null;
+  const error = form.querySelector<HTMLElement>(`[data-field-error="${fieldName}"]`);
+
+  if (field) {
+    field.classList.toggle('is-invalid', Boolean(message));
+    field.setAttribute('aria-invalid', String(Boolean(message)));
+  }
+
+  if (error) error.textContent = message;
+}
+
+function validateForm(form: HTMLFormElement) {
+  const formType = form.dataset.form;
+  const formData = new FormData(form);
+  const errors: Record<string, string> = {};
+  const email = String(formData.get('email') ?? '').trim();
+
+  if (!email) errors.email = 'Please enter an email address.';
+  else if (!validateEmail(email)) errors.email = 'Please enter a valid email address.';
+
+  if (formType === 'collector') {
+    const name = String(formData.get('name') ?? '').trim();
+    const interest = String(formData.get('interest') ?? '').trim();
+    const message = String(formData.get('message') ?? '').trim();
+
+    if (name.length < 2) errors.name = 'Please enter your name.';
+    if (!interest) errors.interest = 'Please choose an inquiry type.';
+    if (message.length < 20) errors.message = 'Please share at least 20 characters so the studio can respond well.';
+  }
+
+  ['name', 'email', 'interest', 'message'].forEach((fieldName) => setFieldError(form, fieldName, errors[fieldName] ?? ''));
+  return errors;
+}
+
 function setupForms() {
   const forms = document.querySelectorAll<HTMLFormElement>('[data-form]');
   forms.forEach((form) => {
+    form.addEventListener('input', () => validateForm(form));
+    form.addEventListener('change', () => validateForm(form));
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const status = form.querySelector<HTMLElement>('[data-form-status]');
       const formType = form.dataset.form;
+      const errors = validateForm(form);
+      const firstInvalidName = Object.keys(errors)[0];
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
+      if (firstInvalidName) {
+        const firstInvalidField = form.elements.namedItem(firstInvalidName) as HTMLElement | null;
+        if (status) status.textContent = 'Please correct the highlighted fields before sending.';
+        firstInvalidField?.focus();
         return;
       }
 
@@ -360,8 +413,24 @@ function setupForms() {
       }
 
       form.reset();
+      ['name', 'email', 'interest', 'message'].forEach((fieldName) => setFieldError(form, fieldName, ''));
     });
   });
+}
+
+function setupAnalyticsPlaceholder() {
+  const configuredId = window.BIG_GA_MEASUREMENT_ID || document.querySelector<HTMLMetaElement>('meta[name="google-analytics-id"]')?.content;
+  if (!configuredId || configuredId === 'G-XXXXXXXXXX') return;
+
+  const analyticsScript = document.createElement('script');
+  analyticsScript.async = true;
+  analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(configuredId)}`;
+  document.head.append(analyticsScript);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = (...args: unknown[]) => window.dataLayer?.push(args);
+  window.gtag('js', new Date());
+  window.gtag('config', configuredId, { anonymize_ip: true });
 }
 
 function setupEvents() {
@@ -392,6 +461,7 @@ function init() {
   renderTimeline();
   setupRoomTabs();
   setupForms();
+  setupAnalyticsPlaceholder();
   setupEvents();
   observeReveals();
 
