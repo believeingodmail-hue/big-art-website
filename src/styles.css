@@ -350,3 +350,28 @@ dd { margin: 0; color: var(--muted); }
 .not-found-page { min-height: 100vh; display: grid; place-items: center; width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 96px 0; }
 .not-found-card { border: 1px solid var(--line); border-radius: 42px; background: linear-gradient(145deg, rgba(255,255,255,0.075), rgba(255,255,255,0.025)); padding: clamp(34px, 8vw, 86px); box-shadow: var(--shadow); }
 .not-found-card h1 { max-width: 880px; margin-bottom: 20px; }
+
+.collection-overview {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255,255,255,0.045);
+  padding: 18px;
+}
+.collection-overview strong { color: var(--gold-soft); }
+.institutional-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.institution-card, .curatorial-statement {
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  background: linear-gradient(145deg, rgba(27,19,13,0.84), rgba(8,6,5,0.82));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(20px);
+  padding: clamp(26px, 4vw, 46px);
+}
+.institution-card p:not(.section-kicker), .curatorial-statement p:not(.section-kicker) { color: var(--muted); line-height: 1.82; }
+.institution-card h3 { margin-bottom: 18px; }
+.curatorial-statement { margin-top: 18px; }
+.curatorial-statement h3 { max-width: 840px; margin-bottom: 20px; font-size: clamp(2.2rem, 5vw, 4.8rem); }
+
+@media (max-width: 1060px) {
+  .institutional-grid { grid-template-columns: 1fr; }
+}
