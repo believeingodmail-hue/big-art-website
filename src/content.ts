@@ -72,7 +72,7 @@ export const collections: Collection[] = [
     years: '2025–2026',
     status: 'Global viewing room open',
     description:
-      'A devotional body of work built as a sanctuary: quiet enough for prayer, refined enough for international collectors, and rooted enough to carry ancestral presence. New works can be added to this collection by creating artwork records that reference the believeingod collection id.',
+      'A devotional body of work built as a sanctuary: quiet enough for prayer, refined enough for international collectors, and rooted enough to carry ancestral presence. Every public artwork record on this site belongs to the BelieveinGOD Collection.',
     principles: [
       { title: 'Faith', note: 'Prayer as visual structure' },
       { title: 'Memory', note: 'Edo histories held in texture' },
@@ -80,22 +80,9 @@ export const collections: Collection[] = [
       { title: 'Silence', note: 'Negative space as reverence' },
     ],
   },
-  {
-    id: 'first-light-studies',
-    title: 'First Light Studies',
-    subtitle: 'Study Collection',
-    years: '2025',
-    status: 'Archive available by request',
-    description:
-      'Initial studies that establish the collection language of ash, pearl, shadow, and gold. This record demonstrates how future collections can be managed without redesigning the website.',
-    principles: [
-      { title: 'Study', note: 'Material tests and prayer marks' },
-      { title: 'Threshold', note: 'Small works for future large-format pieces' },
-    ],
-  },
 ];
 
-export const artworkCategories = ['All', 'Gold Leaf', 'Mixed Media', 'Textile', 'Oil + Ash', 'Study'];
+export const artworkCategories = ['All', 'Gold Leaf', 'Mixed Media', 'Textile', 'Oil + Ash'];
 
 export const artworks: Artwork[] = [
   {
@@ -114,28 +101,9 @@ export const artworks: Artwork[] = [
     shortDescription: 'A radiant meditation on protection, promise, and divine presence.',
     detail:
       'A ceremonial field of ochre and gold that frames belief as shelter. The work is designed for collectors seeking warmth, reverence, and a luminous spiritual anchor.',
-    provenance: 'B.I.G Art Collections studio archive, 2026.',
+    provenance: 'B.I.G Art Collections archive, 2026.',
     keywords: ['faith', 'gold', 'protection', 'spiritual abstraction', 'featured'],
     featured: true,
-  },
-  {
-    id: 'anointed-silence',
-    title: 'Anointed Silence',
-    artistId: 'izoduwa-precious',
-    collectionId: 'believeingod',
-    exhibitionIds: ['sanctuary-online-2026'],
-    category: 'Mixed Media',
-    medium: 'Mixed media on canvas',
-    year: '2026',
-    scale: '100 × 140 cm',
-    status: 'Reserved',
-    priceNote: 'Collector hold; inquiries welcome',
-    preview: 'onyx',
-    shortDescription: 'A quiet onyx field where restraint, breath, and sacred listening become form.',
-    detail:
-      'A work of deep quiet: blackened surfaces, tender metallic edges, and a vertical silence that asks the viewer to slow down before presence.',
-    provenance: 'B.I.G Art Collections studio archive, 2026.',
-    keywords: ['silence', 'black', 'minimalism', 'prayer'],
   },
   {
     id: 'psalm-of-the-ancestors',
@@ -153,14 +121,14 @@ export const artworks: Artwork[] = [
     shortDescription: 'Earthen rhythm, inherited prayer, and memory composed as contemporary ritual.',
     detail:
       'Textile and charcoal become a remembered song. The surface evokes Edo earth, oral history, and the dignity of those whose names continue to guide the present.',
-    provenance: 'First shown in the internal Memory room edit, 2026.',
+    provenance: 'BelieveinGOD Collection memory room edit, 2026.',
     keywords: ['ancestry', 'Edo', 'textile', 'memory'],
   },
   {
     id: 'believeingod-first-light',
-    title: 'BelieveinGOD: First Light',
+    title: 'BelieveinGOD First Light',
     artistId: 'izoduwa-precious',
-    collectionId: 'first-light-studies',
+    collectionId: 'believeingod',
     exhibitionIds: ['sanctuary-online-2026'],
     category: 'Oil + Ash',
     medium: 'Oil, ash, metallic wash',
@@ -169,44 +137,44 @@ export const artworks: Artwork[] = [
     status: 'Private Collection',
     priceNote: 'Not currently available',
     preview: 'ivory',
-    shortDescription: 'A threshold work about surrendering darkness into the first visible light.',
+    shortDescription: 'A work about surrendering darkness into the first visible light.',
     detail:
       "First Light holds a narrow opening in a field of ash and pearl. It is the collection's visual prayer for renewal, courage, and divine arrival.",
-    provenance: 'Private collection placement, 2025.',
-    keywords: ['light', 'ash', 'renewal', 'study'],
+    provenance: 'Private BelieveinGOD Collection placement, 2025.',
+    keywords: ['light', 'ash', 'renewal', 'prayer'],
   },
   {
     id: 'veil-before-dawn',
     title: 'Veil Before Dawn',
     artistId: 'izoduwa-precious',
-    collectionId: 'first-light-studies',
+    collectionId: 'believeingod',
     exhibitionIds: ['private-viewing-room-2026'],
-    category: 'Study',
-    medium: 'Charcoal, ash, acrylic study',
+    category: 'Mixed Media',
+    medium: 'Charcoal, ash, acrylic',
     year: '2026',
     scale: '60 × 80 cm',
     status: 'Available',
-    priceNote: 'Study pricing on request',
-    preview: 'ivory',
-    shortDescription: 'A smaller study for collectors drawn to intimate devotional works.',
+    priceNote: 'Price and availability on request',
+    preview: 'onyx',
+    shortDescription: 'An intimate devotional work held between shadow, breath, and emerging light.',
     detail:
       'Veil Before Dawn keeps the scale intimate while preserving the collection language of restraint, shadow, and emerging light.',
-    provenance: 'B.I.G Art Collections studio archive, 2026.',
-    keywords: ['study', 'charcoal', 'ash', 'intimate scale'],
+    provenance: 'B.I.G Art Collections archive, 2026.',
+    keywords: ['charcoal', 'ash', 'intimate scale', 'devotional'],
   },
 ];
 
 export const exhibitions: Exhibition[] = [
   {
     id: 'sanctuary-online-2026',
-    title: 'BelieveinGOD: Sanctuary Online',
+    title: 'BelieveinGOD Sanctuary Online',
     date: '2026',
     status: 'Current digital exhibition',
     venue: 'B.I.G Art Collections virtual gallery',
     room: 'Invocation',
     description:
       'A cinematic online presentation staged for collectors, curators, and institutions. The room opens with gold, shadow, and a devotional sense of arrival.',
-    artworkIds: ['covenant-in-gold', 'anointed-silence', 'believeingod-first-light'],
+    artworkIds: ['covenant-in-gold', 'believeingod-first-light'],
   },
   {
     id: 'memory-room-2026',

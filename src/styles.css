@@ -186,7 +186,7 @@ h3 { margin: 0; font-size: clamp(1.55rem, 3vw, 2.55rem); }
 .text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-soft); font-weight: 900; letter-spacing: 0.13em; text-transform: uppercase; font-size: 0.78rem; }
 .inline-mail { color: var(--gold-soft); font-weight: 900; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .collection-grid, .artist-page, .contact-card, .virtual-gallery, .gallery-experience { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 28px; }
-.collection-statement, .artist-copy, .heritage-card, .contact-card, .newsletter, .statement-card, .virtual-gallery, .featured-artwork, .art-card, .timeline-list, .artist-portrait {
+.collection-statement, .artist-copy, .heritage-card, .contact-card, .newsletter, .statement-card, .virtual-gallery, .featured-artwork, .art-card, .timeline-list {
   border: 1px solid var(--line);
   background: linear-gradient(145deg, rgba(27,19,13,0.84), rgba(8,6,5,0.82));
   box-shadow: var(--shadow);
@@ -198,12 +198,7 @@ h3 { margin: 0; font-size: clamp(1.55rem, 3vw, 2.55rem); }
 .principle span { display: block; width: 42px; height: 42px; margin-bottom: 30px; border: 1px solid var(--line-strong); border-radius: 50%; background: radial-gradient(circle, var(--gold-soft), transparent 62%); }
 .principle strong { display: block; font-family: var(--serif); font-size: 2.1rem; font-weight: 600; }
 .principle small { color: var(--muted); line-height: 1.6; }
-.artist-page { align-items: stretch; }
-.artist-portrait { position: relative; display: grid; min-height: 560px; place-items: center; border-radius: 42px; overflow: hidden; }
-.artist-portrait::before { content: ''; position: absolute; inset: 8%; border: 1px solid var(--line); border-radius: 50%; }
-.artist-portrait strong { position: relative; z-index: 2; font-family: var(--serif); font-size: clamp(6rem, 16vw, 14rem); color: rgba(243,212,134,0.82); text-shadow: 0 20px 90px rgba(217,164,65,0.3); }
-.portrait-orb { position: absolute; width: 58%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(217,164,65,0.28), transparent 66%); }
-.portrait-line { position: absolute; width: 1px; height: 88%; background: linear-gradient(transparent, rgba(243,212,134,0.76), transparent); }
+.artist-page { align-items: stretch; grid-template-columns: 1fr; }
 .artist-copy { padding: clamp(28px, 4vw, 54px); border-radius: 42px; }
 .artist-metrics { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .artist-metrics span { padding: 11px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--gold-soft); font-size: 0.74rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
