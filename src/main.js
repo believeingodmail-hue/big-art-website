@@ -1,8 +1,8 @@
-const menuButton = document.querySelector<HTMLButtonElement>('[data-menu-button]');
-const mobileNav = document.querySelector<HTMLElement>('[data-mobile-nav]');
-const menuIcon = document.querySelector<HTMLElement>('[data-menu-icon]');
+const menuButton = document.querySelector('[data-menu-button]');
+const mobileNav = document.querySelector('[data-mobile-nav]');
+const menuIcon = document.querySelector('[data-menu-icon]');
 
-function setMenuState(isOpen: boolean) {
+function setMenuState(isOpen) {
   if (!menuButton || !mobileNav || !menuIcon) return;
 
   menuButton.setAttribute('aria-expanded', String(isOpen));
@@ -19,7 +19,7 @@ mobileNav?.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => setMenuState(false));
 });
 
-const revealTargets = document.querySelectorAll<HTMLElement>('.reveal');
+const revealTargets = document.querySelectorAll('.reveal');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (!prefersReducedMotion && 'IntersectionObserver' in window) {
@@ -54,14 +54,14 @@ if (document.readyState === 'loading') {
 
 window.setTimeout(finishLoading, 1800);
 
-const artworkCards = document.querySelectorAll<HTMLButtonElement>('[data-artwork-card]');
-const featuredPreview = document.querySelector<HTMLElement>('[data-featured-preview]');
-const artworkTitle = document.querySelector<HTMLElement>('[data-artwork-title]');
-const artworkDescription = document.querySelector<HTMLElement>('[data-artwork-description]');
-const artworkNumber = document.querySelector<HTMLElement>('[data-artwork-number]');
+const artworkCards = document.querySelectorAll('[data-artwork-card]');
+const featuredPreview = document.querySelector('[data-featured-preview]');
+const artworkTitle = document.querySelector('[data-artwork-title]');
+const artworkDescription = document.querySelector('[data-artwork-description]');
+const artworkNumber = document.querySelector('[data-artwork-number]');
 const previewThemes = ['ochre', 'onyx', 'ember', 'ivory'];
 
-function selectArtwork(card: HTMLButtonElement) {
+function selectArtwork(card) {
   const title = card.dataset.title;
   const description = card.dataset.description;
   const preview = card.dataset.preview;
