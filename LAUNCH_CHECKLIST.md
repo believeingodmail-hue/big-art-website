@@ -13,7 +13,7 @@ This website is a static, Netlify-ready digital gallery for `izoduwa.gallery`. I
 
 - Confirm `index.html`, `style.css`, `script.js`, `404.html`, and `assets/` are present.
 - Confirm `assets/favicon.svg` and `assets/og-image.svg` load correctly.
-- Confirm the contact link uses `studio@izoduwa.gallery`.
+- Confirm the contact link uses `connect@izoduwa.gallery`.
 - Confirm the viewing room uses text-only work presentation until official artwork documentation is ready.
 - Test the site on mobile, tablet, and desktop widths.
 
