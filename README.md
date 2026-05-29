@@ -29,3 +29,4 @@ LAUNCH_CHECKLIST.md
 - Update visual styling in `style.css`.
 - Update navigation and reveal behavior in `script.js`.
 - Add official artwork photography inside `assets/` only when final artwork documentation is approved.
+- Replace or add artwork images inside `assets/`.

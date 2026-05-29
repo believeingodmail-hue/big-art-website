@@ -40,6 +40,8 @@ body::before {
   background:
     radial-gradient(circle at 76% 12%, rgba(168, 121, 54, 0.16), transparent 30rem),
     radial-gradient(circle at 10% 86%, rgba(210, 168, 90, 0.08), transparent 26rem),
+    radial-gradient(circle at 74% 14%, rgba(168, 121, 54, 0.18), transparent 28rem),
+    radial-gradient(circle at 10% 82%, rgba(210, 168, 90, 0.1), transparent 24rem),
     linear-gradient(135deg, #050403 0%, #100d0a 44%, #070604 100%);
 }
 
@@ -59,6 +61,10 @@ body::after {
 
 body.modal-open {
   overflow: hidden;
+  opacity: 0.16;
+  background-image: linear-gradient(rgba(244, 239, 229, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(244, 239, 229, 0.04) 1px, transparent 1px);
+  background-size: 84px 84px;
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 80%, transparent);
 }
 
 img {
@@ -69,7 +75,7 @@ img {
 a,
 button {
   color: inherit;
-  font: inherit;
+  font: inherit;L
 }
 
 a {
@@ -82,6 +88,13 @@ button {
 
 .container {
   width: min(1140px, calc(100% - 40px));
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
   margin-inline: auto;
 }
 
@@ -119,6 +132,7 @@ button {
   padding-block: 14px;
   border-bottom: 1px solid var(--line);
   background: rgba(7, 6, 4, 0.84);
+  background: rgba(7, 6, 4, 0.82);
   backdrop-filter: blur(18px);
 }
 
@@ -207,6 +221,7 @@ h3 {
   font-family: var(--serif);
   font-weight: 500;
   letter-spacing: -0.04em;
+  letter-spacing: -0.035em;
   line-height: 0.98;
 }
 
@@ -215,11 +230,15 @@ h1 {
   margin-bottom: 1.6rem;
   font-size: clamp(4rem, 10vw, 9.6rem);
   text-transform: uppercase;
+  max-width: 760px;
+  margin-bottom: 1.6rem;
+  font-size: clamp(4.2rem, 11vw, 9.4rem);
 }
 
 h2 {
   margin-bottom: 1.5rem;
   font-size: clamp(2.65rem, 5.8vw, 5.6rem);
+  font-size: clamp(2.7rem, 6vw, 5.8rem);
 }
 
 h3 {
@@ -239,23 +258,31 @@ h3 {
   background:
     linear-gradient(90deg, rgba(7, 6, 4, 0.98), rgba(7, 6, 4, 0.7) 50%, rgba(7, 6, 4, 0.36)),
     radial-gradient(circle at 76% 38%, rgba(210, 168, 90, 0.16), transparent 24rem);
+  opacity: 0.7;
+  background:
+    linear-gradient(90deg, rgba(7, 6, 4, 0.96), rgba(7, 6, 4, 0.66) 48%, rgba(7, 6, 4, 0.2)),
+    radial-gradient(circle at 72% 34%, rgba(210, 168, 90, 0.22), transparent 21rem);
 }
 
 .hero-grid {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.74fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.72fr);
   gap: clamp(2rem, 6vw, 5rem);
   align-items: end;
   min-height: calc(100svh - 196px);
 }
 
 .hero-lede {
-  max-width: 760px;
+O  max-width: 760px;
   color: var(--soft-ivory);
   font-family: var(--serif);
   font-size: clamp(1.45rem, 3vw, 2.55rem);
   line-height: 1.12;
+  max-width: 690px;
+  color: rgba(244, 239, 229, 0.76);
+  font-size: clamp(1.05rem, 1.8vw, 1.34rem);
 }
 
 .hero-actions,
@@ -338,6 +365,32 @@ h3 {
 .viewing-card span,
 .service-card span,
 .site-footer {
+.hero-artwork {
+  margin: 0;
+  border: 1px solid rgba(244, 239, 229, 0.16);
+  background: rgba(244, 239, 229, 0.035);
+  box-shadow: var(--shadow);
+}
+
+.hero-artwork img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.hero-artwork figcaption,
+.art-card-copy {
+  padding: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.hero-artwork span,
+.hero-artwork small,
+.art-card p,
+.art-card span,
+.site-footer,
+.collection-facts dt,
+.service-card span {
   color: var(--muted);
   font-size: 0.74rem;
   letter-spacing: 0.16em;
@@ -371,6 +424,12 @@ h3 {
 .collection-facts dd {
   margin: 0;
   color: var(--ivory);
+.hero-artwork strong {
+  display: block;
+  margin: 0.2rem 0;
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 500;
 }
 
 .intro-band {
@@ -414,6 +473,10 @@ h3 {
 .inquiry-panel p,
 .service-card p,
 .modal-panel p {
+.gallery-header p,
+.statement-copy p,
+.inquiry-panel p,
+.service-card p {
   color: rgba(244, 239, 229, 0.7);
   font-size: 1.02rem;
 }
@@ -507,6 +570,63 @@ h3 {
 
 .two-column-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: grid;
+  gap: 0;
+  margin: 2.4rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.collection-facts div {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: 1rem;
+  padding: 1.05rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.collection-facts dd {
+  margin: 0;
+  color: var(--ivory);
+}
+
+.gallery-section {
+  background: rgba(5, 4, 3, 0.68);
+}
+
+.gallery-header {
+  max-width: 780px;
+  margin-bottom: 3rem;
+}
+
+.artwork-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.6rem);
+  align-items: start;
+}
+
+.art-card {
+  overflow: hidden;
+  border: 1px solid rgba(244, 239, 229, 0.14);
+  background: rgba(244, 239, 229, 0.035);
+  transition: transform 700ms ease, border-color 700ms ease, background 700ms ease;
+}
+
+.art-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(210, 168, 90, 0.46);
+  background: rgba(244, 239, 229, 0.055);
+}
+
+.art-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5.2;
+  object-fit: cover;
+  filter: saturate(0.86) contrast(1.04);
+}
+
+.featured-card {
+  margin-top: 4rem;
 }
 
 .statement-section {
@@ -771,6 +891,7 @@ h3 {
   .collector-grid,
   .statement-copy,
   .artist-roles {
+  .statement-copy {
     grid-template-columns: 1fr;
   }
 
@@ -783,6 +904,8 @@ h3 {
   }
 
   .intro-grid {
+  .intro-grid,
+  .artwork-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -800,12 +923,15 @@ h3 {
   .two-column-list,
   .viewing-grid {
     grid-template-columns: 1fr;
+  .featured-card {
+    margin-top: 0;
   }
 }
 
 @media (max-width: 620px) {
   .container {
-    width: min(100% - 28px, 1140px);
+o    width: min(100% - 28px, 1140px);
+    width: min(100% - 28px, 1120px);
   }
 
   .site-header {
@@ -818,6 +944,7 @@ h3 {
 
   h1 {
     font-size: clamp(3.1rem, 17vw, 5rem);
+    font-size: clamp(3.4rem, 18vw, 5rem);
   }
 
   .hero {
@@ -825,6 +952,8 @@ h3 {
   }
 
   .intro-grid {
+  .intro-grid,
+  .artwork-grid {
     grid-template-columns: 1fr;
   }
 
@@ -833,7 +962,7 @@ h3 {
     border-bottom: 1px solid var(--line);
   }
 
-  .hero-monolith dl div,
+!  .hero-monolith dl div,
   .collection-facts div {
     grid-template-columns: 1fr;
     gap: 0.25rem;
