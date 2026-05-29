@@ -13,6 +13,7 @@ script.js
 assets/
 404.html
 README.md
+LAUNCH_CHECKLIST.md
 ```
 
 ## Deploy to Netlify
@@ -27,4 +28,5 @@ README.md
 - Update page copy in `index.html`.
 - Update visual styling in `style.css`.
 - Update navigation and reveal behavior in `script.js`.
+- Add official artwork photography inside `assets/` only when final artwork documentation is approved.
 - Replace or add artwork images inside `assets/`.
