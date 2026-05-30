@@ -1,6 +1,6 @@
-# Launch Checklist — B.I.G Art Collections / BelieveinGOD Collection
+# Launch Checklist — IZODUWA / BelieveinGOD Collection
 
-This website is a static, Netlify-ready digital gallery for `izoduwa.gallery`. It does not require React, Vite, npm, a build command, or GitHub Pages.
+This website is a static, Netlify-ready digital gallery for `izoduwa.gallery`. It does not require React, TypeScript, Vite, npm, a build command, or GitHub Pages.
 
 ## Netlify upload
 
@@ -12,14 +12,14 @@ This website is a static, Netlify-ready digital gallery for `izoduwa.gallery`. I
 ## Pre-launch checks
 
 - Confirm `index.html`, `style.css`, `script.js`, `404.html`, and `assets/` are present.
-- Confirm `assets/favicon.svg` and `assets/og-image.svg` load correctly.
-- Confirm the contact link uses `connect@izoduwa.gallery`.
-- Confirm the viewing room uses text-only work presentation until official artwork documentation is ready.
+- Confirm `assets/favicon.svg`, `assets/og-image.svg`, `assets/ruler-of-the-ocean-waves.png`, and all artwork image files load correctly.
+- Confirm every contact link uses `connect@izoduwa.gallery`.
+- Confirm every artwork opens the detail modal.
 - Test the site on mobile, tablet, and desktop widths.
 
 ## Content updates
 
 - Update artwork titles and collection text directly in `index.html`.
+- Update artwork detail content in `script.js`.
 - Update visual styling in `style.css`.
-- Update mobile navigation, reveal behavior, and the viewing room modal in `script.js`.
-- Add official artwork photography to `assets/` only when final images are approved for public or private viewing.
+- Add official artwork photography to `assets/` using the exact filenames referenced by the site.
